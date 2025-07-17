@@ -1,0 +1,26 @@
+definitions:
+  route.User:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      price:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /users/:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/route.User'
+            type: array
+      summary: Get all users
+swagger: "2.0"
